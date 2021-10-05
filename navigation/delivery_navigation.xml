@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/delivery_navigation"
+    app:startDestination="@id/deliveryFragment">
+    <fragment
+        android:id="@+id/deliveryFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.Delivery.DeliveryFragment"
+        tools:layout="@layout/fragment_delivery">
+        <action
+            android:id="@+id/action_deliveryFragment_to_EmptyDestinationDialogFragment"
+            app:destination="@id/EmptyDestinationDialogFragment" />
+        <action
+            android:id="@+id/action_deliveryFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_deliveryFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/contactFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.ContactFragment"
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/action_contactFragment_to_courierSearchFragment"
+            app:destination="@id/courierSearchFragment"
+            app:popUpTo="@id/contactFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_contactFragment_to_deliveryAddressFragment"
+            app:destination="@id/deliveryAddressFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_selectPhoneFragment"
+            app:destination="@id/selectPhoneFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/EmptyDestinationDialogFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.EmptyDestinationDialog"
+        tools:layout="@layout/empty_destination_dialog">
+        <action
+            android:id="@+id/action_EmptyDestinationDialogFragment_to_deliveryAddressFragment"
+            app:destination="@id/deliveryAddressFragment"
+            app:popUpTo="@id/EmptyDestinationDialogFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/shopFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop">
+        <action
+            android:id="@+id/action_shopFragment_to_courierSearchFragment"
+            app:destination="@id/courierSearchFragment"
+            app:popUpTo="@id/shopFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_shopFragment_to_deliveryAddressFragment"
+            app:destination="@id/deliveryAddressFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_selectPhoneFragment"
+            app:destination="@id/selectPhoneFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_passportFragment"
+            app:destination="@id/passportFragment" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/courierSearchFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.CourierSearchFragment"
+        android:label="fragment_courier_search"
+        tools:layout="@layout/courier_search_fragment">
+        <action
+            android:id="@+id/action_courierSearchFragment_to_curierFoundFragment"
+            app:destination="@id/courierFoundFragment"
+            app:popUpTo="@id/courierSearchFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/deliveryAddressFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.DeliveryAddress.DeliveryAddressFragment"
+        tools:layout="@layout/delivery_address_fragment" >
+        <argument
+            android:name="startAddressIsClicked"
+            app:argType="boolean" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/courierFoundFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.CurierFoundFragment"
+        android:label="fragment_curier_found"
+        tools:layout="@layout/curier_is_found_fragment">
+        <action
+            android:id="@+id/action_courierFound_to_optionsFragment"
+            app:destination="@id/optionsFragment"/>
+        <action
+            android:id="@+id/action_courierFound_to_mainFragment"
+            app:destination="@id/deliveryFragment"/>
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/optionsFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/options_fragment" />
+
+    <dialog
+        android:id="@+id/selectPhoneFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.SelectPhoneFragment"
+        android:label="fragment_select_phone"
+        tools:layout="@layout/fragment_select_phone" >
+        <argument
+            android:name="part"
+            app:argType="integer"/>
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/passportFragment"
+        android:name="ru.zipper.godelivery.view.activity.deliveryActivity.fragment.PassportFragment"
+        android:label="PassportFragment" />
+</navigation>

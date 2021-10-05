@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.activity.deliveryActivity.fragment.SelectPhoneFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_part"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="68dp"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/textViewTitleSelectPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/ystext"
+                android:text="@string/who_take_parcel_from"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewClose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="22dp"
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <View
+                android:id="@+id/imageViewLongLine5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="18dp"
+                android:background="#4D000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewTitleSelectPhone" />
+
+            <EditText
+                android:id="@+id/editTextNameOrPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                android:background="@color/transparent"
+                android:ems="10"
+                android:fontFamily="@font/ystext"
+                android:hint="@string/input_name_or_phone"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLongLine5" />
+
+            <View
+                android:id="@+id/imageViewVerticalLine3"
+                android:layout_width="1dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="15dp"
+                android:background="#4D000000"
+                app:layout_constraintBottom_toTopOf="@id/imageViewLongLine6"
+                app:layout_constraintEnd_toStartOf="@+id/textViewContacts"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLongLine5"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/imageViewLongLine6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="18dp"
+                android:background="#4D000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextNameOrPhone" />
+
+            <TextView
+                android:id="@+id/textViewContacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="22dp"
+                android:fontFamily="@font/ystext"
+                android:text="@string/contacts"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewLongLine6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLongLine5" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/namePhoneContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLongLine6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/textViewMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/ystext"
+                    android:text="@string/me"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewMyPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/ystext"
+                    android:text="@string/my_phone_number"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewMe" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/yellow_button_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLongLine6">
+
+                <View
+                    android:id="@+id/imageViewYellowButton2"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/yellow_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/grey_field" />
+
+                <TextView
+                    android:id="@+id/textViewSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ystext"
+                    android:text="@string/select"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewYellowButton2"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewYellowButton2"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewYellowButton2"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewYellowButton2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageViewClose2"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_close"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@id/imageViewLongLine6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLongLine5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
